@@ -9,9 +9,9 @@ class HeroSlider {
     this.prevBtn = document.querySelector(".hero-prev");
     this.nextBtn = document.querySelector(".hero-next");
     this.hero = document.querySelector(".hero");
-    
+
     this.autoplayInterval = null;
-    this.autoplayDuration = 5000; // 5 seconds
+    this.autoplayDuration = 2000; // 2 seconds
     this.isHovered = false;
     this.touchStartX = 0;
     this.touchEndX = 0;
@@ -50,19 +50,27 @@ class HeroSlider {
     });
 
     // Touch swipe support
-    this.hero?.addEventListener("touchstart", (e) => {
-      this.touchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
+    this.hero?.addEventListener(
+      "touchstart",
+      (e) => {
+        this.touchStartX = e.changedTouches[0].screenX;
+      },
+      { passive: true },
+    );
 
-    this.hero?.addEventListener("touchend", (e) => {
-      this.touchEndX = e.changedTouches[0].screenX;
-      this.handleSwipe();
-    }, { passive: true });
+    this.hero?.addEventListener(
+      "touchend",
+      (e) => {
+        this.touchEndX = e.changedTouches[0].screenX;
+        this.handleSwipe();
+      },
+      { passive: true },
+    );
 
     // Start autoplay
     this.startAutoplay();
-    
-    console.log('Hero slider initialized with', this.slides.length, 'slides');
+
+    console.log("Hero slider initialized with", this.slides.length, "slides");
   }
 
   showSlide(index) {
@@ -97,7 +105,7 @@ class HeroSlider {
 
   handleSwipe() {
     const swipeDistance = this.touchEndX - this.touchStartX;
-    
+
     if (Math.abs(swipeDistance) > this.minSwipeDistance) {
       if (swipeDistance > 0) {
         // Swipe right - go to previous slide
@@ -111,7 +119,10 @@ class HeroSlider {
 
   startAutoplay() {
     if (!this.isHovered && !this.autoplayInterval) {
-      this.autoplayInterval = setInterval(() => this.nextSlide(), this.autoplayDuration);
+      this.autoplayInterval = setInterval(
+        () => this.nextSlide(),
+        this.autoplayDuration,
+      );
     }
   }
 
@@ -125,58 +136,6 @@ class HeroSlider {
   resetAutoplay() {
     this.stopAutoplay();
     this.startAutoplay();
-  }
-}
-      const announcement = document.createElement("div");
-      announcement.setAttribute("aria-live", "polite");
-      announcement.setAttribute("aria-atomic", "true");
-      announcement.className = "sr-only";
-      announcement.textContent = `Slide ${this.currentSlide + 1}: ${headline.textContent}`;
-
-      document.body.appendChild(announcement);
-
-      setTimeout(() => {
-        document.body.removeChild(announcement);
-      }, 1000);
-    }
-  }
-
-  startAutoplay() {
-    this.resetAutoplay();
-  }
-
-  resetAutoplay() {
-    if (this.autoplayInterval) {
-      clearInterval(this.autoplayInterval);
-    }
-
-    // Reset progress animation
-    if (this.autoplayProgress) {
-      this.autoplayProgress.style.animation = "none";
-      setTimeout(() => {
-        this.autoplayProgress.style.animation = `autoplayProgress ${this.autoplayDuration}ms linear infinite`;
-      }, 10);
-    }
-
-    if (!this.isPaused) {
-      this.autoplayInterval = setInterval(() => {
-        this.nextSlide();
-      }, this.autoplayDuration);
-    }
-  }
-
-  pauseAutoplay() {
-    this.isPaused = true;
-    if (this.autoplayInterval) {
-      clearInterval(this.autoplayInterval);
-    }
-    this.autoplayIndicator?.classList.add("paused");
-  }
-
-  resumeAutoplay() {
-    this.isPaused = false;
-    this.autoplayIndicator?.classList.remove("paused");
-    this.resetAutoplay();
   }
 }
 
@@ -430,12 +389,3 @@ if (window.performance && console.table) {
     });
   });
 }
- (only if hero exists on page)
-  if (document.querySelector('.hero-slider')) {
-    new HeroSlider();
-  }
-
-  // Initialize smooth scroll
-  initSmoothScroll();
-
-  console.log("✨ Page components

@@ -12,97 +12,12 @@
   </head>
   <body>
     <!-- Header -->
-    <header class="header">
-      <!-- Top Contact Strip -->
-      <!-- <div class="contact-strip">
-        <div class="container">
-          <div class="contact-info">
-            <a href="tel:+66123456789" class="contact-item">
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path
-                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
-                ></path>
-              </svg>
-              <span>+66 (0) 12-345-6789</span>
-            </a>
-            <a href="mailto:info@enterprise.com" class="contact-item">
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path
-                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                ></path>
-                <polyline points="22,6 12,13 2,6"></polyline>
-              </svg>
-              <span>info@enterprise.com</span>
-            </a>
-          </div>
-          <a href="#contact" class="btn-quote">Request a Quote</a>
-        </div>
-      </div> -->
 
-      <!-- Main Navigation -->
-      <nav class="main-nav">
-        <div class="container">
-          <a href="/" class="logo">
-            <span class="logo-text">Data<strong>Invert</strong></span>
-          </a>
-
-          <button
-            class="hamburger"
-            aria-label="Toggle navigation"
-            aria-expanded="false"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-
-          <ul class="nav-menu">
-            <li><a href="/index.html" class="nav-link active">Home</a></li>
-            <li class="nav-dropdown">
-              <a href="/about.html" class="nav-link">About</a>
-            </li>
-            <li class="nav-dropdown">
-              <a href="/services.html" class="nav-link">Services</a>
-            </li>
-            <li class="nav-dropdown">
-              <a href="#" class="nav-link">Solutions</a>
-              <ul class="dropdown-menu">
-                <li><a href="/warehouse.html">Warehouse Management</a></li>
-                <li><a href="/retail.html">Retail Solutions</a></li>
-                <li><a href="/manufacturing.html">Manufacturing</a></li>
-                <li><a href="/logistics.html">Logistics</a></li>
-              </ul>
-            </li>
-            <li class="nav-dropdown">
-              <a href="#products" class="nav-link">Products</a>
-              <ul class="dropdown-menu">
-                <li><a href="#rfid">RFID Systems</a></li>
-                <li><a href="#barcode">Barcode Scanners</a></li>
-                <li><a href="#printers">Industrial Printers</a></li>
-              </ul>
-            </li>
-            <li><a href="#brands" class="nav-link">Brands</a></li>
-            <li><a href="#case-studies" class="nav-link">Case Studies</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
-            <li><a href="#careers" class="nav-link">Careers</a></li>
-          </ul>
-        </div>
-      </nav>
-    </header>
+    <div id="header-container"></div>
+    <script src="components/header.js"></script>
+    <script>
+      loadHeader("home");
+    </script>
 
     <!-- Hero Section with Full-Width Image Slider -->
     <section class="hero" id="home">
@@ -151,7 +66,7 @@
           "
         >
           <div class="hero-slide-content">
-            <h1>พันธมิตรที่เชื่อถือได้สำหรับธุรกิจของคุณ</h1>
+            <h1>A reliable partner for your business.</h1>
             <p>
               Join hundreds of satisfied clients who have transformed their
               operations with our proven technology solutions and expert
@@ -352,7 +267,7 @@
         <div
           class="product-item product-image"
           style="
-            background-image: url(&quot;https://images.unsplash.com/photo-1588508065123-287b28e013da?w=800&q=80&quot;);
+            background-image: url(&quot;https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgnw1Pc9_l9YRqFgyiQ-91u6qT8DwLqQuumQ&s&quot;);
           "
         >
           <div class="product-image-overlay"></div>
@@ -366,14 +281,14 @@
             delivering speed, accuracy, and reliability for retail, warehouse,
             and industrial applications.
           </p>
-          <a href="#barcode" class="product-learn-more">Learn More →</a>
+          <a href="/barcode.html" class="product-learn-more">Learn More →</a>
         </div>
 
         <!-- Product 2: Image -->
         <div
           class="product-item product-image"
           style="
-            background-image: url(&quot;https://images.unsplash.com/photo-1639322537228-f710d846310a?w=800&q=80&quot;);
+            background-image: url(&quot;https://static.ticimax.cloud/cdn-cgi/image/width=270,quality=85/34219/uploads/urunresimleri/buyuk/ts820-u-logs-rfid-el-terminali-alarmid--4444-.png&quot;);
           "
         >
           <div class="product-image-overlay"></div>
@@ -387,7 +302,7 @@
             inventory management, revolutionizing asset visibility across your
             entire supply chain.
           </p>
-          <a href="#rfid" class="product-learn-more">Learn More →</a>
+          <a href="/rfid.html" class="product-learn-more">Learn More →</a>
         </div>
 
         <!-- Row 2: Text, Image, Text, Image -->
@@ -400,14 +315,14 @@
             workforce with enterprise-grade performance in the most demanding
             environments.
           </p>
-          <a href="#mobile" class="product-learn-more">Learn More →</a>
+          <a href="/mobile.html" class="product-learn-more">Learn More →</a>
         </div>
 
         <!-- Product 3: Image -->
         <div
           class="product-item product-image"
           style="
-            background-image: url(&quot;https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=800&q=80&quot;);
+            background-image: url(&quot;https://cdn11.bigcommerce.com/s-im2p1/images/stencil/1280x1280/products/4153/8359/tc2x-series-mobile-computers-product-front-tc26-3x2-3600__17047.1677071496.jpg?c=2&quot;);
           "
         >
           <div class="product-image-overlay"></div>
@@ -421,14 +336,14 @@
             for mission-critical applications, ensuring compliance and
             traceability.
           </p>
-          <a href="#printers" class="product-learn-more">Learn More →</a>
+          <a href="/printers.html" class="product-learn-more">Learn More →</a>
         </div>
 
         <!-- Product 4: Image -->
         <div
           class="product-item product-image"
           style="
-            background-image: url(&quot;https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?w=800&q=80&quot;);
+            background-image: url(&quot;https://cdn1.npcdn.net/image/15928107164f74e3c76ae6244f9cf7435c70641912.jpg?md5id=ec3dd4dc9a1084b24b736a18994e0bd6&new_width=1000&new_height=1000&w=-62170009200&quot;);
           "
         >
           <div class="product-image-overlay"></div>
@@ -542,24 +457,3 @@
     <script type="module" src="main.js"></script>
   </body>
 </html>
-
-<!-- ช่วยเพิ่มหน้า warehouse.html retail.html manufacturing.html logistics.html
-ทั้ง 4 หน้า อยากได้ width 100vw เลยแล้วเอารูปมาใส่โดยใช้ url = https://spglobal.scene7.com/is/image/spglobalcom/CI_0425_AI-Innovations?$responsive$ รูปภาพอันนี้
-แล้วก็มี text overlay ว่า Empowering your business อีกบรรทัด ตัว OUR SOLUTIONS เด่นๆ
-
-ส่วนต่อมาต่อจาก hero section เป็น div 2 ฝั่ง ซ้าย 30% ขวา 70% 
-ฝั่งซ้ายเป็น list menu เหมือน sidebar
-Our Solutions
-- Warehouse Management (active)
-- Retail Solutions
-- Manufacturing
-- Logistics
-ฝั่งขวาเป็น content ของแต่ละหน้า
-เช่น warehouse.html ก็ใส่ content เกี่ยวกับ warehouse management
-retail.html ก็ใส่ content เกี่ยวกับ retail solutions
-manufacturing.html ก็ใส่ content เกี่ยวกับ manufacturing
-logistics.html ก็ใส่ content เกี่ยวกับ logistics
-
-ส่วนการแสดง content จากเป็น หัวข้อ h2 ตัวใหญ่ๆ ตามด้วย paragraph 2-3 ย่อหน้า
-card list 3 อันต่อ sections (image title description read more button) read more กดแล้วโชว์ dialog popup ขึ้นมา เป็น รูปซ้าย 30% ขวา 70% เป็นรายละเอียดของ card นั้นๆ 
-แล้วก็ footer เหมือนเดิมครับ ช่วยจัด style ให้สวยงาม -->

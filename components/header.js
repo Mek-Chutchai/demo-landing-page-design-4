@@ -1,5 +1,5 @@
 // Header Component Loader
-export async function loadHeader(activePage = "home") {
+async function loadHeader(activePage = "home") {
   try {
     console.log("🔄 Loading header component...");
     const response = await fetch("components/header.html");
@@ -107,4 +107,17 @@ function initNavigationMenu() {
       });
     }
   });
+
+  // Add scroll effect to navbar
+  const mainNav = document.querySelector(".main-nav");
+  if (mainNav) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        mainNav.classList.add("scrolled");
+      } else {
+        mainNav.classList.remove("scrolled");
+      }
+    });
+    console.log("📜 Scroll listener added to navbar");
+  }
 }
