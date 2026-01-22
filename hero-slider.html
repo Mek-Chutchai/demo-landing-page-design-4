@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hero Slider - Responsive Landing Page</title>
+    <style>
+      /* ===========================
+           RESET & BASE STYLES
+        =========================== */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+          Cantarell, sans-serif;
+        overflow-x: hidden;
+      }
+
+      /* ===========================
+           HERO SECTION
+        =========================== */
+      .hero {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      /* ===========================
+           SLIDER CONTAINER
+        =========================== */
+      .slider {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+
+      /* ===========================
+           INDIVIDUAL SLIDES
+        =========================== */
+      .slide {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0;
+        transform: scale(1.1);
+        transition:
+          opacity 0.8s ease-in-out,
+          transform 0.8s ease-in-out;
+        z-index: 1;
+      }
+
+      .slide.active {
+        opacity: 1;
+        transform: scale(1);
+        z-index: 2;
+      }
+
+      /* Dark gradient overlay for text readability */
+      .slide::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(0, 0, 0, 0.7) 0%,
+          rgba(0, 0, 0, 0.4) 50%,
+          rgba(0, 0, 0, 0.6) 100%
+        );
+        z-index: 1;
+      }
+
+      /* ===========================
+           SLIDE CONTENT
+        =========================== */
+      .slide-content {
+        position: relative;
+        z-index: 2;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: clamp(2rem, 5vw, 4rem);
+        max-width: 1200px;
+        margin: 0 auto;
+        color: white;
+      }
+
+      .slide-content h1 {
+        font-size: clamp(2rem, 5vw, 4.5rem);
+        font-weight: 700;
+        line-height: 1.1;
+        margin-bottom: clamp(1rem, 2vw, 1.5rem);
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        animation: fadeInUp 0.8s ease-out 0.2s both;
+      }
+
+      .slide-content p {
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        line-height: 1.6;
+        margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+        max-width: 600px;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+        animation: fadeInUp 0.8s ease-out 0.4s both;
+      }
+
+      /* ===========================
+           CTA BUTTON
+        =========================== */
+      .btn {
+        display: inline-block;
+        padding: clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 3vw, 2.5rem);
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.8);
+        color: white;
+        text-decoration: none;
+        font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+        font-weight: 600;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        animation: fadeInUp 0.8s ease-out 0.6s both;
+      }
+
+      .btn:hover {
+        background: rgba(255, 255, 255, 0.95);
+        color: #1a1a1a;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      }
+
+      .btn:focus {
+        outline: 3px solid rgba(255, 255, 255, 0.6);
+        outline-offset: 3px;
+      }
+
+      /* ===========================
+           NAVIGATION BUTTONS
+        =========================== */
+      .nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        color: white;
+        width: clamp(40px, 5vw, 60px);
+        height: clamp(40px, 5vw, 60px);
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        font-size: clamp(1.2rem, 2vw, 1.8rem);
+      }
+
+      .nav:hover {
+        background: rgba(255, 255, 255, 0.3);
+        border-color: rgba(255, 255, 255, 0.6);
+        transform: translateY(-50%) scale(1.1);
+      }
+
+      .nav:focus {
+        outline: 3px solid rgba(255, 255, 255, 0.6);
+        outline-offset: 3px;
+      }
+
+      .nav:active {
+        transform: translateY(-50%) scale(0.95);
+      }
+
+      .nav.prev {
+        left: clamp(1rem, 3vw, 2rem);
+      }
+
+      .nav.next {
+        right: clamp(1rem, 3vw, 2rem);
+      }
+
+      /* ===========================
+           DOT INDICATORS
+        =========================== */
+      .dots {
+        position: absolute;
+        bottom: clamp(2rem, 4vw, 3rem);
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        display: flex;
+        gap: clamp(0.5rem, 1vw, 0.75rem);
+      }
+
+      .dot {
+        width: clamp(10px, 2vw, 14px);
+        height: clamp(10px, 2vw, 14px);
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.4);
+        border: 2px solid rgba(255, 255, 255, 0.6);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        padding: 0;
+      }
+
+      .dot:hover {
+        background: rgba(255, 255, 255, 0.7);
+        transform: scale(1.2);
+      }
+
+      .dot:focus {
+        outline: 3px solid rgba(255, 255, 255, 0.6);
+        outline-offset: 3px;
+      }
+
+      .dot.active {
+        background: rgba(255, 255, 255, 0.95);
+        transform: scale(1.3);
+      }
+
+      /* ===========================
+           ANIMATIONS
+        =========================== */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* ===========================
+           MOBILE RESPONSIVE
+        =========================== */
+      @media (max-width: 768px) {
+        .slide-content {
+          align-items: center;
+          text-align: center;
+          padding: 2rem 1.5rem;
+        }
+
+        .nav {
+          width: 40px;
+          height: 40px;
+        }
+
+        .nav.prev {
+          left: 1rem;
+        }
+
+        .nav.next {
+          right: 1rem;
+        }
+
+        .dots {
+          bottom: 2rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .slide-content {
+          padding: 1.5rem 1rem;
+        }
+
+        .nav {
+          width: 35px;
+          height: 35px;
+          font-size: 1rem;
+        }
+
+        .dots {
+          bottom: 1.5rem;
+        }
+
+        .dot {
+          width: 10px;
+          height: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ===========================
+         HERO SECTION WITH SLIDER
+    =========================== -->
+    <section class="hero">
+      <div class="slider">
+        <!-- Slide 1 -->
+        <div
+          class="slide active"
+          style="
+            background-image: url(&quot;https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80&quot;);
+          "
+        >
+          <div class="slide-content">
+            <h1>Innovation Meets Technology</h1>
+            <p>
+              Discover cutting-edge solutions that transform your business and
+              drive growth in the digital age.
+            </p>
+            <a href="#learn-more" class="btn">Learn More</a>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div
+          class="slide"
+          style="
+            background-image: url(&quot;https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1920&q=80&quot;);
+          "
+        >
+          <div class="slide-content">
+            <h1>Empower Your Team</h1>
+            <p>
+              Build stronger teams with collaborative tools and innovative
+              platforms designed for modern workplaces.
+            </p>
+            <a href="#get-started" class="btn">Get Started</a>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div
+          class="slide"
+          style="
+            background-image: url(&quot;https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1920&q=80&quot;);
+          "
+        >
+          <div class="slide-content">
+            <h1>Scale Your Success</h1>
+            <p>
+              Enterprise solutions built to grow with your business, ensuring
+              reliability and performance at every stage.
+            </p>
+            <a href="#contact" class="btn">Contact Us</a>
+          </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <button class="nav prev" aria-label="Previous slide">‹</button>
+        <button class="nav next" aria-label="Next slide">›</button>
+
+        <!-- Dot Indicators -->
+        <div class="dots">
+          <button class="dot active" aria-label="Slide 1"></button>
+          <button class="dot" aria-label="Slide 2"></button>
+          <button class="dot" aria-label="Slide 3"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===========================
+         JAVASCRIPT - SLIDER LOGIC
+    =========================== -->
+    <script>
+      // ===========================
+      // SLIDER CONFIGURATION
+      // ===========================
+      const AUTOPLAY_INTERVAL = 5000; // 5 seconds
+      let currentIndex = 0;
+      let autoplayTimer = null;
+      let isHovered = false;
+
+      // DOM Elements
+      const slides = document.querySelectorAll(".slide");
+      const dots = document.querySelectorAll(".dot");
+      const prevBtn = document.querySelector(".nav.prev");
+      const nextBtn = document.querySelector(".nav.next");
+      const hero = document.querySelector(".hero");
+      const totalSlides = slides.length;
+
+      // ===========================
+      // SHOW SLIDE FUNCTION
+      // ===========================
+      function showSlide(index) {
+        // Ensure index is within bounds (circular)
+        currentIndex = (index + totalSlides) % totalSlides;
+
+        // Update slides
+        slides.forEach((slide, i) => {
+          slide.classList.toggle("active", i === currentIndex);
+        });
+
+        // Update dots
+        dots.forEach((dot, i) => {
+          dot.classList.toggle("active", i === currentIndex);
+        });
+      }
+
+      // ===========================
+      // NAVIGATION FUNCTIONS
+      // ===========================
+      function nextSlide() {
+        showSlide(currentIndex + 1);
+        resetAutoplay();
+      }
+
+      function prevSlide() {
+        showSlide(currentIndex - 1);
+        resetAutoplay();
+      }
+
+      function goToSlide(index) {
+        showSlide(index);
+        resetAutoplay();
+      }
+
+      // ===========================
+      // AUTOPLAY MANAGEMENT
+      // ===========================
+      function startAutoplay() {
+        if (!isHovered) {
+          autoplayTimer = setInterval(nextSlide, AUTOPLAY_INTERVAL);
+        }
+      }
+
+      function stopAutoplay() {
+        if (autoplayTimer) {
+          clearInterval(autoplayTimer);
+          autoplayTimer = null;
+        }
+      }
+
+      function resetAutoplay() {
+        stopAutoplay();
+        startAutoplay();
+      }
+
+      // ===========================
+      // EVENT LISTENERS
+      // ===========================
+
+      // Navigation buttons
+      prevBtn.addEventListener("click", prevSlide);
+      nextBtn.addEventListener("click", nextSlide);
+
+      // Dot indicators
+      dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => goToSlide(index));
+      });
+
+      // Keyboard navigation
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowLeft") {
+          prevSlide();
+        } else if (e.key === "ArrowRight") {
+          nextSlide();
+        }
+      });
+
+      // Pause on hover, resume on leave
+      hero.addEventListener("mouseenter", () => {
+        isHovered = true;
+        stopAutoplay();
+      });
+
+      hero.addEventListener("mouseleave", () => {
+        isHovered = false;
+        startAutoplay();
+      });
+
+      // ===========================
+      // TOUCH SWIPE SUPPORT
+      // ===========================
+      let touchStartX = 0;
+      let touchEndX = 0;
+      const MIN_SWIPE_DISTANCE = 50;
+
+      hero.addEventListener(
+        "touchstart",
+        (e) => {
+          touchStartX = e.changedTouches[0].screenX;
+        },
+        { passive: true },
+      );
+
+      hero.addEventListener(
+        "touchend",
+        (e) => {
+          touchEndX = e.changedTouches[0].screenX;
+          handleSwipe();
+        },
+        { passive: true },
+      );
+
+      function handleSwipe() {
+        const swipeDistance = touchEndX - touchStartX;
+
+        if (Math.abs(swipeDistance) > MIN_SWIPE_DISTANCE) {
+          if (swipeDistance > 0) {
+            // Swipe right - go to previous slide
+            prevSlide();
+          } else {
+            // Swipe left - go to next slide
+            nextSlide();
+          }
+        }
+      }
+
+      // ===========================
+      // INITIALIZATION
+      // ===========================
+      // Start autoplay on page load
+      startAutoplay();
+
+      // Log initialization (can be removed in production)
+      console.log("Hero slider initialized with", totalSlides, "slides");
+    </script>
+  </body>
+</html>
