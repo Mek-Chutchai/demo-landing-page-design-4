@@ -34,7 +34,7 @@
         <div
           class="hero-slide active"
           style="
-            background-image: url(&quot;https://images.stockcake.com/public/d/f/3/df35a44c-c369-468e-827f-0f5897fdd3d9/scanning-barcode-manually-stockcake.jpg&quot;);
+            background-image: url(&quot;https://foycom.com/web/image/4340-8f607b72/What%20is%20RFID-Enabled%20Inventory%20Management%2043%20image.jpg&quot;);
           "
         >
           <div class="hero-slide-content">
@@ -44,7 +44,10 @@
               enterprise solutions deliver efficiency, accuracy, and
               scalability.
             </p>
-            <a href="#solutions" class="hero-btn">Explore Solutions</a>
+            <!-- <a href="smart-city.html" class="hero-btn">Explore Solutions</a> -->
+            <a href="/demo-landing-page-design-4/smart-city" class="hero-btn"
+              >Explore Solutions</a
+            >
           </div>
         </div>
 
@@ -62,7 +65,10 @@
               industry-leading RFID solutions designed for high-performance
               environments.
             </p>
-            <a href="#products" class="hero-btn">View Products</a>
+            <!-- <a href="product-aidc.html" class="hero-btn">View Products</a> -->
+            <a href="/demo-landing-page-design-4/product-aidc" class="hero-btn"
+              >View Products</a
+            >
           </div>
         </div>
 
@@ -80,7 +86,13 @@
               operations with our proven technology solutions and expert
               support.
             </p>
-            <a href="#case-studies" class="hero-btn">Success Stories</a>
+            <!-- <a href="#case-studies" class="hero-btn">Success Stories</a> -->
+            <!-- <a href="knowledge-center.html" class="hero-btn">Success Stories</a> -->
+            <a
+              href="/demo-landing-page-design-4/knowledge-center"
+              class="hero-btn"
+              >Success Stories</a
+            >
           </div>
         </div>
 
@@ -104,27 +116,29 @@
       <div class="services-layout">
         <!-- Left Side: Dynamic Content -->
         <div class="services-left">
-          <div
-            class="services-image"
-            id="industry-main-image"
-            style="
-              background-image: url(&quot;https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80&quot;);
-            "
-          >
-            <div class="services-overlay">
-              <h2 id="industry-main-title">Manufacturing</h2>
-              <p id="industry-main-quote">
-                "Manufacturing excellence through intelligent automation and
-                real-time data capture systems."
-              </p>
-              <p id="industry-main-description">
-                Transform your manufacturing operations with our comprehensive
-                AIDC solutions. From production line tracking to quality
-                control, we provide the technology infrastructure that drives
-                efficiency, reduces errors, and ensures complete traceability
-                across your entire manufacturing process.
-              </p>
-            </div>
+          <div id="industry-image-wrapper">
+            <div
+              id="industry-image-current"
+              class="industry-image image-current"
+              style="
+                background-image: url(&quot;https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80&quot;);
+              "
+            ></div>
+            <div id="industry-image-next" class="industry-image"></div>
+          </div>
+          <div class="services-overlay">
+            <h2 id="industry-main-title">Manufacturing</h2>
+            <p id="industry-main-quote">
+              "Manufacturing excellence through intelligent automation and
+              real-time data capture systems."
+            </p>
+            <p id="industry-main-description">
+              Transform your manufacturing operations with our comprehensive
+              AIDC solutions. From production line tracking to quality control,
+              we provide the technology infrastructure that drives efficiency,
+              reduces errors, and ensures complete traceability across your
+              entire manufacturing process.
+            </p>
           </div>
         </div>
 
@@ -135,6 +149,9 @@
             <div
               class="industry-card active"
               data-industry="manufacturing"
+              tabindex="0"
+              role="button"
+              aria-pressed="true"
               style="
                 background-image: url(&quot;https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80&quot;);
               "
@@ -148,6 +165,9 @@
             <div
               class="industry-card"
               data-industry="logistics"
+              tabindex="0"
+              role="button"
+              aria-pressed="false"
               style="
                 background-image: url(&quot;https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80&quot;);
               "
@@ -161,6 +181,9 @@
             <div
               class="industry-card"
               data-industry="hospitality"
+              tabindex="0"
+              role="button"
+              aria-pressed="false"
               style="
                 background-image: url(&quot;https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80&quot;);
               "
@@ -174,6 +197,9 @@
             <div
               class="industry-card"
               data-industry="retail"
+              tabindex="0"
+              role="button"
+              aria-pressed="false"
               style="
                 background-image: url(&quot;https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80&quot;);
               "
@@ -187,6 +213,9 @@
             <div
               class="industry-card"
               data-industry="government"
+              tabindex="0"
+              role="button"
+              aria-pressed="false"
               style="
                 background-image: url(&quot;https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80&quot;);
               "
@@ -200,6 +229,9 @@
             <div
               class="industry-card"
               data-industry="education"
+              tabindex="0"
+              role="button"
+              aria-pressed="false"
               style="
                 background-image: url(&quot;https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyPhXUBVFJwnqUfMc8e1USyeKDPCpgdJDnEw&s&quot;);
               "
@@ -213,6 +245,9 @@
             <div
               class="industry-card"
               data-industry="banking"
+              tabindex="0"
+              role="button"
+              aria-pressed="false"
               style="
                 background-image: url(&quot;https://images.unsplash.com/photo-1501167786227-4cba60f6d58f?w=800&q=80&quot;);
               "
@@ -294,38 +329,149 @@
         },
       };
 
-      // Handle industry card clicks
-      document.addEventListener("DOMContentLoaded", function () {
+      document.addEventListener("DOMContentLoaded", () => {
         const industryCards = document.querySelectorAll(".industry-card");
-        const mainImage = document.getElementById("industry-main-image");
+        const imageCurrent = document.getElementById("industry-image-current");
+        const imageNext = document.getElementById("industry-image-next");
+        const overlay = document.querySelector(".services-overlay");
         const mainTitle = document.getElementById("industry-main-title");
         const mainQuote = document.getElementById("industry-main-quote");
         const mainDescription = document.getElementById(
           "industry-main-description",
         );
 
-        industryCards.forEach((card) => {
-          card.addEventListener("click", function () {
-            // Remove active class from all cards
-            industryCards.forEach((c) => c.classList.remove("active"));
+        let isAnimating = false;
+        let currentIndustry = "manufacturing";
 
-            // Add active class to clicked card
-            this.classList.add("active");
+        // Initialize
+        imageCurrent.classList.add("img-current");
+        imageNext.classList.add("img-hidden");
 
-            // Get industry data
-            const industry = this.getAttribute("data-industry");
-            const data = industryData[industry];
+        // Main switch function with robust error handling
+        function switchIndustry(industryKey) {
+          // Guard: prevent switching to same or while animating
+          if (industryKey === currentIndustry || isAnimating) return;
 
-            // Update content with fade effect
-            mainImage.style.opacity = "0.7";
-            setTimeout(() => {
-              mainImage.style.backgroundImage = `url('${data.image}')`;
-              mainTitle.textContent = data.title;
-              mainQuote.textContent = data.quote;
-              mainDescription.textContent = data.description;
-              mainImage.style.opacity = "1";
-            }, 300);
+          const data = industryData[industryKey];
+
+          // Guard: missing data - restore state safely
+          if (!data) {
+            console.warn(`Industry data not found: ${industryKey}`);
+            isAnimating = false;
+            return;
+          }
+
+          isAnimating = true;
+          currentIndustry = industryKey;
+
+          // Update active card states
+          industryCards.forEach((card) => {
+            const isActive = card.dataset.industry === industryKey;
+            card.classList.toggle("active", isActive);
+            card.setAttribute("aria-pressed", isActive.toString());
           });
+
+          // Step 1: Fade out text content
+          overlay.classList.add("content-fade-out");
+
+          // Wait for text fade out, then update content
+          const handleTextFadeOut = () => {
+            overlay.removeEventListener("transitionend", handleTextFadeOut);
+
+            // Update text content while invisible
+            mainTitle.textContent = data.title;
+            mainQuote.textContent = data.quote;
+            mainDescription.textContent = data.description;
+
+            // Slide text in from right
+            overlay.classList.remove("content-fade-out");
+            overlay.classList.add("content-slide-in");
+
+            // Clean up slide-in class after transition
+            const handleTextSlideIn = () => {
+              overlay.removeEventListener("transitionend", handleTextSlideIn);
+              overlay.classList.remove("content-slide-in");
+            };
+            overlay.addEventListener("transitionend", handleTextSlideIn, {
+              once: true,
+            });
+          };
+          overlay.addEventListener("transitionend", handleTextFadeOut, {
+            once: true,
+          });
+
+          // Step 2: Prepare next image (off-screen right)
+          imageNext.style.backgroundImage = `url('${data.image}')`;
+          imageNext.classList.remove("img-hidden");
+          imageNext.classList.add("img-prepare");
+
+          // Step 3: Start image transition
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              // Exit current image (slide left + fade)
+              imageCurrent.classList.remove("img-current");
+              // imageCurrent.classList.add("img-exit");
+
+              // Enter next image (slide in from right)
+              imageNext.classList.remove("img-prepare");
+              imageNext.classList.add("img-enter");
+            });
+          });
+
+          // Step 4: Listen for image transition completion
+          const handleImageTransitionEnd = (e) => {
+            // Only respond to opacity transition on the entering image
+            if (e.target !== imageNext || e.propertyName !== "opacity") return;
+
+            imageNext.removeEventListener(
+              "transitionend",
+              handleImageTransitionEnd,
+            );
+
+            // Swap layers: next becomes current
+            imageCurrent.style.backgroundImage =
+              imageNext.style.backgroundImage;
+            imageCurrent.classList.remove("img-exit");
+            imageCurrent.classList.add("img-current");
+
+            // Reset next image to hidden state
+            imageNext.classList.remove("img-enter");
+            imageNext.classList.add("img-hidden");
+            imageNext.style.backgroundImage = "";
+
+            // Release animation lock
+            isAnimating = false;
+          };
+          imageNext.addEventListener("transitionend", handleImageTransitionEnd);
+        }
+
+        // Event handlers
+        function handleIndustrySelect(card) {
+          const industryKey = card.dataset.industry;
+          if (industryKey) {
+            switchIndustry(industryKey);
+          }
+        }
+
+        // Click event
+        industryCards.forEach((card) => {
+          card.addEventListener("click", () => handleIndustrySelect(card));
+        });
+
+        // Keyboard accessibility (Enter or Space)
+        industryCards.forEach((card) => {
+          card.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              handleIndustrySelect(card);
+            }
+          });
+        });
+
+        // Optional: Preload images for smoother transitions
+        Object.values(industryData).forEach((data) => {
+          const img = new Image();
+          img.src = data.image;
         });
       });
     </script>
@@ -343,7 +489,8 @@
             offer cutting-edge hardware, software, and services that meet the
             evolving needs of modern enterprises.
           </p>
-          <a href="#partners-page" class="partners-link">View More →</a>
+          <a href="/zebra-brand.html" class="partners-link">View More →</a>
+          <!-- <a href="/demo-landing-page-design-4/zebra-brand.html" class="partners-link">View More →</a> -->
         </div>
 
         <!-- Right Box: Partner Logos Grid -->
@@ -408,129 +555,280 @@
       </div>
     </section>
 
-    <!-- Products Section -->
-    <section class="products" id="products">
-      <div class="products-grid">
-        <!-- Row 1: 2 Products (Image-Text, Text-Image) -->
-
-        <!-- Product 1: AIDC - Image -->
-        <div
-          class="product-item product-image"
-          style="
-            background-image: url(&quot;https://www.camcode.com/wp-content/uploads/2018/09/how-aidc-works.webp&quot;);
-          "
-        >
-          <div class="product-image-overlay"></div>
-        </div>
-
-        <!-- Product 1: AIDC - Text -->
-        <div class="product-item product-text">
-          <h3>AIDC</h3>
-          <p>
-            Automatic Identification and Data Capture solutions including
-            barcode scanners, RFID readers, and mobile computers for seamless
-            data collection and tracking across retail, warehouse, and
-            industrial environments.
+    <!-- Our Products Section -->
+    <section class="portfolio" id="portfolio">
+      <div class="portfolio-container">
+        <header class="portfolio-header">
+          <p class="portfolio-subtitle">What We Offer</p>
+          <h2 class="portfolio-title">Our Product Groups</h2>
+          <p class="portfolio-description">
+            Comprehensive technology solutions designed for enterprise
+            excellence
           </p>
-          <a href="/product-aidc.html" class="product-learn-more"
-            >Learn More →</a
+        </header>
+
+        <div class="portfolio-carousel">
+          <div class="portfolio-track">
+            <!-- Card 1: AIDC -->
+            <article class="portfolio-card" data-index="0">
+              <div
+                class="portfolio-card-image"
+                style="
+                  background-image: url(&quot;https://www.camcode.com/wp-content/uploads/2018/09/how-aidc-works.webp&quot;);
+                "
+              >
+                <div class="portfolio-card-overlay"></div>
+              </div>
+              <div class="portfolio-card-content">
+                <!-- <span class="portfolio-badge">Solutions</span> -->
+                <h3>AIDC</h3>
+                <p>
+                  Automatic Identification and Data Capture solutions including
+                  barcode scanners, RFID readers, and mobile computers for
+                  seamless data collection and tracking.
+                </p>
+                <a href="/product-aidc.html" class="portfolio-link">
+                  View More <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 2: IT Hardware -->
+            <article class="portfolio-card" data-index="1">
+              <div
+                class="portfolio-card-image"
+                style="
+                  background-image: url(&quot;https://media.istockphoto.com/id/979528218/photo/it-engineer-servicing-part-of-a-supercomputer.jpg?s=612x612&w=0&k=20&c=hG_JexKDbxyXgX4oFZ_WsBriED1kDin5JyNSHkjgvRY=&quot;);
+                "
+              >
+                <div class="portfolio-card-overlay"></div>
+              </div>
+              <div class="portfolio-card-content">
+                <!-- <span class="portfolio-badge">Infrastructure</span> -->
+                <h3>IT Technology Hardware</h3>
+                <p>
+                  Enterprise-grade IT infrastructure including servers, storage
+                  systems, and networking equipment that delivers performance
+                  and reliability.
+                </p>
+                <a href="/product-it-hardware.html" class="portfolio-link">
+                  View More <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 3: IT Software -->
+            <article class="portfolio-card" data-index="2">
+              <div
+                class="portfolio-card-image"
+                style="
+                  background-image: url(&quot;https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?cs=srgb&dl=pexels-luis-gomes-166706-574071.jpg&fm=jpg&quot;);
+                "
+              >
+                <div class="portfolio-card-overlay"></div>
+              </div>
+              <div class="portfolio-card-content">
+                <!-- <span class="portfolio-badge">Software</span> -->
+                <h3>IT Technology Software</h3>
+                <p>
+                  Comprehensive enterprise software solutions including ERP,
+                  database management, and analytics platforms that drive
+                  digital transformation.
+                </p>
+                <a href="/product-it-software.html" class="portfolio-link">
+                  View More <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 4: Hardware Security -->
+            <article class="portfolio-card" data-index="3">
+              <div
+                class="portfolio-card-image"
+                style="
+                  background-image: url(&quot;https://images.pexels.com/photos/430208/pexels-photo-430208.jpeg?cs=srgb&dl=pexels-jmark-430208.jpg&fm=jpg&quot;);
+                "
+              >
+                <div class="portfolio-card-overlay"></div>
+              </div>
+              <div class="portfolio-card-content">
+                <!-- <span class="portfolio-badge">Security</span> -->
+                <h3>Hardware Security</h3>
+                <p>
+                  Physical security solutions including access control systems,
+                  biometric devices, and surveillance cameras to protect your
+                  facilities and assets.
+                </p>
+                <a
+                  href="/product-hardware-security.html"
+                  class="portfolio-link"
+                >
+                  View More <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Card 5: Software Security -->
+            <article class="portfolio-card" data-index="4">
+              <div
+                class="portfolio-card-image"
+                style="
+                  background-image: url(&quot;https://www.tierpoint.com/wp-content/uploads/2025/02/Benefits-of-Using-AI-and-ML-in-Cybersecurity_blog.jpg&quot;);
+                "
+              >
+                <div class="portfolio-card-overlay"></div>
+              </div>
+              <div class="portfolio-card-content">
+                <!-- <span class="portfolio-badge">Cybersecurity</span> -->
+                <h3>Software Security</h3>
+                <p>
+                  Advanced cybersecurity software including firewalls, endpoint
+                  protection, and threat detection solutions to defend against
+                  evolving cyber threats.
+                </p>
+                <a
+                  href="/product-software-security.html"
+                  class="portfolio-link"
+                >
+                  View More <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Navigation Controls -->
+        <div class="portfolio-controls">
+          <button
+            class="portfolio-nav portfolio-prev"
+            aria-label="Previous slide"
           >
-        </div>
-        <!-- Product 2: IT Technology Hardware - Image -->
-        <div
-          class="product-item product-image"
-          style="
-            background-image: url(&quot;https://media.istockphoto.com/id/979528218/photo/it-engineer-servicing-part-of-a-supercomputer.jpg?s=612x612&w=0&k=20&c=hG_JexKDbxyXgX4oFZ_WsBriED1kDin5JyNSHkjgvRY=&quot;);
-          "
-        >
-          <div class="product-image-overlay"></div>
-        </div>
-        <!-- Product 2: IT Technology Hardware - Text -->
-        <div class="product-item product-text">
-          <h3>IT Technology Hardware</h3>
-          <p>
-            Enterprise-grade IT infrastructure including servers, storage
-            systems, and networking equipment that delivers performance,
-            reliability, and scalability for mission-critical business
-            operations.
-          </p>
-          <a href="/product-it-hardware.html" class="product-learn-more"
-            >Learn More →</a
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </button>
+          <div
+            class="portfolio-dots"
+            role="tablist"
+            aria-label="Portfolio slides"
           >
-        </div>
-
-        <!-- Row 2: 3 Products (Image-Text, Text-Image, Image-Text) -->
-
-        <!-- Product 3: IT Technology Software - Text -->
-        <div class="product-item product-text">
-          <h3>IT Technology Software</h3>
-          <p>
-            Comprehensive enterprise software solutions including ERP, database
-            management, business intelligence, and analytics platforms that
-            drive digital transformation and operational excellence.
-          </p>
-          <a href="/product-it-software.html" class="product-learn-more"
-            >Learn More →</a
-          >
-        </div>
-
-        <!-- Product 3: IT Technology Software - Image -->
-        <div
-          class="product-item product-image"
-          style="
-            background-image: url(&quot;https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?cs=srgb&dl=pexels-luis-gomes-166706-574071.jpg&fm=jpg&quot;);
-          "
-        >
-          <div class="product-image-overlay"></div>
-        </div>
-
-        <!-- Product 4: Hardware Security - Text -->
-        <div class="product-item product-text">
-          <h3>Hardware Security</h3>
-          <p>
-            Physical security solutions including access control systems,
-            biometric devices, surveillance cameras, and intrusion detection to
-            protect your facilities, assets, and personnel.
-          </p>
-          <a href="/product-hardware-security.html" class="product-learn-more"
-            >Learn More →</a
-          >
-        </div>
-
-        <!-- Product 4: Hardware Security - Image -->
-        <div
-          class="product-item product-image"
-          style="
-            background-image: url(&quot;https://images.pexels.com/photos/430208/pexels-photo-430208.jpeg?cs=srgb&dl=pexels-jmark-430208.jpg&fm=jpg&quot;);
-          "
-        >
-          <div class="product-image-overlay"></div>
-        </div>
-
-        <!-- Product 5: Software Security - Image -->
-        <div
-          class="product-item product-image"
-          style="
-            background-image: url(&quot;https://www.tierpoint.com/wp-content/uploads/2025/02/Benefits-of-Using-AI-and-ML-in-Cybersecurity_blog.jpg&quot;);
-          "
-        >
-          <div class="product-image-overlay"></div>
-        </div>
-
-        <!-- Product 5: Software Security - Text -->
-        <div class="product-item product-text">
-          <h3>Software Security</h3>
-          <p>
-            Advanced cybersecurity software including firewalls, endpoint
-            protection, encryption, and threat detection solutions to defend
-            against evolving cyber threats and ensure data protection.
-          </p>
-          <a href="/product-software-security.html" class="product-learn-more"
-            >Learn More →</a
-          >
+            <button
+              class="portfolio-dot active"
+              aria-label="Slide 1"
+              role="tab"
+            ></button>
+            <button
+              class="portfolio-dot"
+              aria-label="Slide 2"
+              role="tab"
+            ></button>
+            <button
+              class="portfolio-dot"
+              aria-label="Slide 3"
+              role="tab"
+            ></button>
+            <button
+              class="portfolio-dot"
+              aria-label="Slide 4"
+              role="tab"
+            ></button>
+            <button
+              class="portfolio-dot"
+              aria-label="Slide 5"
+              role="tab"
+            ></button>
+          </div>
+          <button class="portfolio-nav portfolio-next" aria-label="Next slide">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </button>
         </div>
       </div>
     </section>
+
+    <script>
+      // Portfolio Carousel with Centered Active Card
+      (function () {
+        const track = document.querySelector(".portfolio-track");
+        const cards = document.querySelectorAll(".portfolio-card");
+        const dots = document.querySelectorAll(".portfolio-dot");
+        const prevBtn = document.querySelector(".portfolio-prev");
+        const nextBtn = document.querySelector(".portfolio-next");
+        const carousel = document.querySelector(".portfolio-carousel");
+
+        let currentIndex = 1;
+        const totalSlides = cards.length;
+
+        function updateCarousel() {
+          // Calculate centering offset
+          const cardWidth = cards[0].offsetWidth;
+          const gap = 32; // 2rem gap
+          const carouselWidth = carousel.offsetWidth;
+          const centerOffset = (carouselWidth - cardWidth) / 2;
+
+          // Position active card in center
+          const offset = centerOffset - currentIndex * (cardWidth + gap);
+          track.style.transform = `translateX(${offset}px)`;
+
+          // Update active states
+          cards.forEach((card, index) => {
+            card.classList.toggle("active", index === currentIndex);
+          });
+
+          dots.forEach((dot, index) => {
+            dot.classList.toggle("active", index === currentIndex);
+          });
+        }
+
+        function goToSlide(index) {
+          // Enable infinite loop wrapping
+          currentIndex = (index + totalSlides) % totalSlides;
+          updateCarousel();
+        }
+
+        // Navigation buttons
+        prevBtn.addEventListener("click", () => goToSlide(currentIndex - 1));
+        nextBtn.addEventListener("click", () => goToSlide(currentIndex + 1));
+
+        // Dot navigation
+        dots.forEach((dot, index) => {
+          dot.addEventListener("click", () => goToSlide(index));
+        });
+
+        // Click on cards to center them
+        cards.forEach((card, index) => {
+          card.addEventListener("click", () => goToSlide(index));
+          card.style.cursor = "pointer";
+        });
+
+        // Keyboard navigation
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "ArrowLeft") goToSlide(currentIndex - 1);
+          if (e.key === "ArrowRight") goToSlide(currentIndex + 1);
+        });
+
+        // Initialize
+        updateCarousel();
+
+        // Update on resize
+        window.addEventListener("resize", updateCarousel);
+      })();
+    </script>
 
     <!-- CTA Banner -->
     <section class="cta-banner">
@@ -540,11 +838,21 @@
           <p>
             Let our experts help you find the perfect solution for your needs
           </p>
-          <a href="#contact" class="btn btn-light">Schedule a Consultation</a>
+          <!-- <a href="contact.html" class="btn btn-light"
+            >Schedule a Consultation</a
+          > -->
+          <a href="/zebra-brand.html" class="partners-link"
+            >Schedule a Consultation</a
+          >
         </div>
       </div>
     </section>
 
+    <!-- <div id="footer-container"></div>
+    <script src="components/footer.js"></script> -->
+    <!-- <script>
+      loadFooter();
+    </script> -->
     <!-- Footer -->
     <footer class="footer" id="contact">
       <div class="container">
@@ -653,17 +961,6 @@
               <li>
                 <a href="product-software-security.html">Software Security</a>
               </li>
-            </ul>
-          </div>
-
-          <div class="footer-col">
-            <h4>Resources</h4>
-            <ul>
-              <li><a href="#documentation">Documentation</a></li>
-              <li><a href="#support">Support Center</a></li>
-              <li><a href="#training">Training</a></li>
-              <li><a href="#downloads">Downloads</a></li>
-              <li><a href="#faq">FAQ</a></li>
             </ul>
           </div>
         </div>

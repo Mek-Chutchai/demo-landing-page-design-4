@@ -65,7 +65,25 @@ function initNavigationMenu() {
       hamburger.setAttribute("aria-expanded", !isExpanded);
       navMenu.classList.toggle("active");
       hamburger.classList.toggle("active");
+
+      // Prevent body scroll when menu is open
+      if (!isExpanded) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "";
+      }
+
       console.log("📱 Mobile menu toggled:", !isExpanded ? "OPEN" : "CLOSED");
+    });
+
+    // Close menu with ESC key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && navMenu.classList.contains("active")) {
+        navMenu.classList.remove("active");
+        hamburger.setAttribute("aria-expanded", "false");
+        hamburger.classList.remove("active");
+        document.body.style.overflow = "";
+      }
     });
   } else {
     console.error("❌ Cannot initialize hamburger menu - elements not found");
@@ -88,6 +106,7 @@ function initNavigationMenu() {
       navMenu?.classList.remove("active");
       hamburger?.setAttribute("aria-expanded", "false");
       hamburger?.classList.remove("active");
+      document.body.style.overflow = "";
 
       // Close all dropdowns
       navDropdowns.forEach((dropdown) => {
@@ -102,6 +121,7 @@ function initNavigationMenu() {
       navMenu?.classList.remove("active");
       hamburger?.setAttribute("aria-expanded", "false");
       hamburger?.classList.remove("active");
+      document.body.style.overflow = "";
       navDropdowns.forEach((dropdown) => {
         dropdown.classList.remove("active");
       });

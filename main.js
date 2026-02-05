@@ -11,7 +11,7 @@ class HeroSlider {
     this.hero = document.querySelector(".hero");
 
     this.autoplayInterval = null;
-    this.autoplayDuration = 5000; // 2 seconds
+    this.autoplayDuration = 3500; // 3.5 seconds
     this.isHovered = false;
     this.touchStartX = 0;
     this.touchEndX = 0;
